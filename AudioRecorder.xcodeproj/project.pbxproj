@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6EB48D051D3028B200B43EEA /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB48D041D3028B200B43EEA /* TableViewController.m */; };
 		6ECE0B831D2D618C001DF340 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECE0B821D2D618C001DF340 /* main.m */; };
 		6ECE0B861D2D618C001DF340 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECE0B851D2D618C001DF340 /* AppDelegate.m */; };
 		6ECE0B891D2D618C001DF340 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECE0B881D2D618C001DF340 /* ViewController.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6EB48D031D3028B200B43EEA /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		6EB48D041D3028B200B43EEA /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		6ECE0B7E1D2D618C001DF340 /* AudioRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ECE0B821D2D618C001DF340 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6ECE0B841D2D618C001DF340 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -68,6 +71,8 @@
 				6ECE0B981D2D61BA001DF340 /* Recording.h */,
 				6ECE0B991D2D61BA001DF340 /* Recording.m */,
 				6ECE0B8A1D2D618C001DF340 /* Main.storyboard */,
+				6EB48D031D3028B200B43EEA /* TableViewController.h */,
+				6EB48D041D3028B200B43EEA /* TableViewController.m */,
 				6ECE0B8D1D2D618C001DF340 /* Assets.xcassets */,
 				6ECE0B8F1D2D618C001DF340 /* LaunchScreen.storyboard */,
 				6ECE0B921D2D618C001DF340 /* Info.plist */,
@@ -157,6 +162,7 @@
 				6ECE0B891D2D618C001DF340 /* ViewController.m in Sources */,
 				6ECE0B861D2D618C001DF340 /* AppDelegate.m in Sources */,
 				6ECE0B831D2D618C001DF340 /* main.m in Sources */,
+				6EB48D051D3028B200B43EEA /* TableViewController.m in Sources */,
 				6ECE0B9A1D2D61BA001DF340 /* Recording.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +312,7 @@
 				6ECE0B971D2D618C001DF340 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

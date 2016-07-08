@@ -6,11 +6,21 @@
 //  Copyright © 2016 Noah Shapiro. All rights reserved.
 //
 
+/* 1) make a plan
+ 2) start & stop BUTTON_ALT
+ 3) keep track of recordings
+ 4) make an array that will hold your recordings
+ */
+
 #import <Foundation/Foundation.h>
 
-@interface Recording : NSObject <NSSecureCoding>
+@interface Recording : NSObject <NSCoding>
 
 @property (strong, nonatomic) NSDate* date;
+
+@property (readonly, nonatomic) NSString* name;
+
+
 
 // always save in ~/Documents/yyyyMMddHHmmss
 // we have to save the array of audio recordings in the same file through Object serialization.

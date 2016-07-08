@@ -21,9 +21,11 @@
   }
   return self;
 }
-//Recording* r = [[Recording alloc] initWithDate: [NSDate today]];
 
-
+-(NSString*) description
+{
+  return [NSString stringWithFormat:@"%@", self.date];
+}
 
 
 -(NSString*) path
@@ -34,15 +36,36 @@
   NSString* dateString = [formatter stringFromDate:self.date];
     return [NSString stringWithFormat:@"%@/Documents/%@.caf", home, dateString];
   }
-
-NSString* p  = r.path; // r.path is on the right side because it is a readonly property
   
   -(NSURL*) url
   {
-    return [NSURL URLWithString: r.path]
+    return [NSURL URLWithString: self.path];
   }
 
-   //look up how to initialize / declare objects in Objective C
+
+- (Recording*)initWithCoder:(NSCoder *)decoder
+{
+  self = [super init];
+  if(self){
+    self.date = [decoder decodeObjectOfClass: [Recording class] forKey: @"date"];
+    
+  }
+  return self;
+  
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+  [encoder encodeObject: self.date forKey: @"date"];
+  
+}
+
+
+//Recording* r = [[Recording alloc] initWithDate: [NSDate today]];
+//NSString* p  = r.path; r.path is on the right side because it is a readonly property
+
+
+
 @end
 
   
