@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Recording.h"
+#import <AVFoundation/AVFoundation.h>
 @interface TableViewController : UITableViewController
 
+@property (strong, nonatomic) AVAudioPlayer* player;
+
 @property (strong, nonatomic) NSMutableArray *otherListOfRecordings;
+
+- (void)play: (Recording *) aRecording;
+
 @end

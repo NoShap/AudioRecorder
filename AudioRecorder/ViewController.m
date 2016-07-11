@@ -24,7 +24,7 @@
   self = [super initWithCoder:aDecoder];
   if(self){
     self.listOfRecordings = [[NSMutableArray alloc] init];
-    [self.listOfRecordings addObject:@"recording1"];
+    
     
   }
   return self;
@@ -40,6 +40,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view, typically from a nib.
+  [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"RecordingStudio.jpg"]]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -232,7 +233,6 @@
  
 }
 //need a new method didFinish
-
 /*
 -(void) didFinish
 {
@@ -315,7 +315,7 @@
   
   archive = [NSString stringWithFormat:@"%@/Documents/tenPeopleArchive", NSHomeDirectory()];
   
-  [NSKeyedArchiver archiveRootObject: tenPeople toFile: archive];
+  [NSKeyedArchiver archiveRootObject: self.listOfRecordings toFile: archive];
   
   assert([[NSFileManager defaultManager] fileExistsAtPath: archive]);
   

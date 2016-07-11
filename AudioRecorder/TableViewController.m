@@ -13,6 +13,8 @@
 
 @implementation TableViewController
 
+@synthesize player;
+
 @synthesize otherListOfRecordings;
 
 - (void)viewDidLoad {
@@ -44,8 +46,42 @@
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyCell" forIndexPath:indexPath];
   
   // Configure the cell...
-  cell.textLabel.text = [self.otherListOfRecordings objectAtIndex:indexPath.row];
+  
+    cell.textLabel.text = [[self.otherListOfRecordings objectAtIndex:indexPath.row] name];
+
   return cell;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  // play the audio file that maps onto the cell
+  Recording* r = [self.otherListOfRecordings objectAtIndex: indexPath.row];
+  [self play: r];
+  [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
+- (void) play: (Recording *) aRecording
+  {
+    NSLog(@"Playing %@", aRecording.name);
+    NSAssert([[NSFileManager defaultManager] fileExistsAtPath: aRecording.path], @"Doesn't exist");
+    NSError *error;
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL: aRecording.url error:&error];
+    if(error){
+      NSLog(@"playing audio: %@ %ld %@", [error domain], [error code], [[error userInfo] description]);
+      return;
+    }else{
+      player.delegate = self;
+    }
+    if([player prepareToPlay] == NO){
+      NSLog(@"Not prepared to play!");
+      return;
+    }
+    [player play];
+  }
+
+
 
 
 /*
@@ -90,5 +126,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-}
+
 @end

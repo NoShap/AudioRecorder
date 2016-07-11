@@ -60,6 +60,10 @@
   
 }
 
+-(NSString*)name
+{
+  return [self.date description];
+}
 
 //Recording* r = [[Recording alloc] initWithDate: [NSDate today]];
 //NSString* p  = r.path; r.path is on the right side because it is a readonly property

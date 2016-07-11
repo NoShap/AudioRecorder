@@ -8,6 +8,12 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="9DU-SQ-UgA">
+                    <connections>
+                        <segue destination="9mQ-Xx-0fm" kind="show" id="NCo-DM-jTf"/>
+                    </connections>
+                </swipeGestureRecognizer>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -33,7 +39,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Stop"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="160" y="306" width="81" height="67"/>
+                                    <rect key="frame" x="158" y="383" width="81" height="67"/>
                                 </variation>
                                 <connections>
                                     <action selector="myStopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aUT-a8-tf7"/>
@@ -45,7 +51,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="94" y="64" width="235" height="21"/>
+                                    <rect key="frame" x="82" y="64" width="235" height="21"/>
                                 </variation>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TGn-ls-2TN">
@@ -82,26 +88,23 @@
                         <outlet property="progressBarStatusLabel" destination="Qhg-Xj-Pp0" id="Qb3-xY-CB1"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="9DU-SQ-UgA">
-                    <connections>
-                        <segue destination="9mQ-Xx-0fm" kind="show" id="NCo-DM-jTf"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="502.5" y="322"/>
+            <point key="canvasLocation" x="595.5" y="342"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="1Ly-VF-fdR">
             <objects>
                 <tableViewController id="9mQ-Xx-0fm" customClass="TableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="FbV-Lv-svS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" id="xVR-Xa-YoR" userLabel="MyCell">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xVR-Xa-YoR" id="xNN-2b-tWp">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
