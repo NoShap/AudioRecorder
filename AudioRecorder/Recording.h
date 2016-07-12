@@ -21,7 +21,6 @@
 @property (readonly, nonatomic) NSString* name;
 
 
-
 // always save in ~/Documents/yyyyMMddHHmmss
 // we have to save the array of audio recordings in the same file through Object serialization.
 @property (readonly, nonatomic) NSString* path;

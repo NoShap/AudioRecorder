@@ -42,7 +42,7 @@
     return [NSURL URLWithString: self.path];
   }
 
-
+//encoding and decoding methods for recordings
 - (Recording*)initWithCoder:(NSCoder *)decoder
 {
   self = [super init];
@@ -65,12 +65,13 @@
   return [self.date description];
 }
 
+
+
 //Recording* r = [[Recording alloc] initWithDate: [NSDate today]];
 //NSString* p  = r.path; r.path is on the right side because it is a readonly property
 
 
 
+
 @end
 
-  
- 

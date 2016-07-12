@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6EB41A421D341B2200E2CF7E /* RecordingStudio.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EB41A411D341B2200E2CF7E /* RecordingStudio.jpg */; };
-		6EB41A441D341DD600E2CF7E /* RecordingMicrophone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EB41A431D341DD600E2CF7E /* RecordingMicrophone.jpg */; };
+		6EB41A461D341E8600E2CF7E /* Microphone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EB41A451D341E8600E2CF7E /* Microphone.jpg */; };
 		6EB48D051D3028B200B43EEA /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB48D041D3028B200B43EEA /* TableViewController.m */; };
 		6ECE0B831D2D618C001DF340 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECE0B821D2D618C001DF340 /* main.m */; };
 		6ECE0B861D2D618C001DF340 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECE0B851D2D618C001DF340 /* AppDelegate.m */; };
@@ -20,8 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6EB41A411D341B2200E2CF7E /* RecordingStudio.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = RecordingStudio.jpg; sourceTree = "<group>"; };
-		6EB41A431D341DD600E2CF7E /* RecordingMicrophone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = RecordingMicrophone.jpg; sourceTree = "<group>"; };
+		6EB41A451D341E8600E2CF7E /* Microphone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Microphone.jpg; sourceTree = "<group>"; };
 		6EB48D031D3028B200B43EEA /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		6EB48D041D3028B200B43EEA /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		6ECE0B7E1D2D618C001DF340 /* AudioRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,8 +70,7 @@
 				6ECE0B851D2D618C001DF340 /* AppDelegate.m */,
 				6ECE0B871D2D618C001DF340 /* ViewController.h */,
 				6ECE0B881D2D618C001DF340 /* ViewController.m */,
-				6EB41A411D341B2200E2CF7E /* RecordingStudio.jpg */,
-				6EB41A431D341DD600E2CF7E /* RecordingMicrophone.jpg */,
+				6EB41A451D341E8600E2CF7E /* Microphone.jpg */,
 				6ECE0B981D2D61BA001DF340 /* Recording.h */,
 				6ECE0B991D2D61BA001DF340 /* Recording.m */,
 				6ECE0B8A1D2D618C001DF340 /* Main.storyboard */,
@@ -155,8 +152,7 @@
 				6ECE0B911D2D618C001DF340 /* LaunchScreen.storyboard in Resources */,
 				6ECE0B8E1D2D618C001DF340 /* Assets.xcassets in Resources */,
 				6ECE0B8C1D2D618C001DF340 /* Main.storyboard in Resources */,
-				6EB41A441D341DD600E2CF7E /* RecordingMicrophone.jpg in Resources */,
-				6EB41A421D341B2200E2CF7E /* RecordingStudio.jpg in Resources */,
+				6EB41A461D341E8600E2CF7E /* Microphone.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

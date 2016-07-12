@@ -19,16 +19,25 @@
 @synthesize recorder;
 
 
--(ViewController*) initWithCoder:(NSCoder *)aDecoder
+-(ViewController*)initWithCoder: (NSCoder*) aDecoder
 {
   self = [super initWithCoder:aDecoder];
-  if(self){
-    self.listOfRecordings = [[NSMutableArray alloc] init];
-    
-    
+  if(self) {
+    NSString* archive = [NSString stringWithFormat:@"%@/Documents/recordingsArchive", NSHomeDirectory()];
+    if([[NSFileManager defaultManager] fileExistsAtPath: archive])
+    {
+      self.listOfRecordings = [NSKeyedUnarchiver unarchiveObjectWithFile:archive];
+      [[NSFileManager defaultManager]removeItemAtPath: archive error: nil];
+    }
+    else
+    {
+      self.listOfRecordings = [[NSMutableArray alloc] init];
+    }
   }
   return self;
 }
+
+//need to include archiving method in didDissappear (there's a note where it mentions when to archive down below)
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -40,7 +49,6 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view, typically from a nib.
-  [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"RecordingStudio.jpg"]]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,8 +58,7 @@
 
 - (IBAction)myStartButton:(id)sender
 {
-  
-  //need to make as sesssion to allow recording to be made
+    //need to make as sesssion to allow recording to be made
   //set currentRecording to new Recording
   //insert currentRecording into recordingList
   //need to start progress bar
@@ -164,24 +171,20 @@
   
 
   
-  Recording* r = [[Recording alloc] initWithDate:[NSDate date]];
-  self.currentRecording = r;
-  
-  
+ 
   
 }
  -(void) handleTimer
 {
   
-  NSLog(@"yoohoo");
+  //NSLog(@"yoohoo");
   float n = self.audioProgressBar.progress;
   [self.audioProgressBar setProgress: (n + 0.002)  animated: YES];
   
- if (self.audioProgressBar.progress == 1.0)
- {
-   [self.listOfRecordings addObject: self.currentRecording];
-   [self.listOfRecordings addObject: @"Flurp"];
- }
+  if(self.audioProgressBar.progress == 1.0)
+  {
+    [self.timer invalidate];
+  }
   //need to have a method that updates the progress bar ever so much that after 5 seconds
   //the progress view will complete;
   
@@ -208,7 +211,6 @@
 {
   
   [self.recorder stop];
-  
   [self.timer invalidate];
   self.progressBarStatusLabel.text = @"Stopped";
   self.audioProgressBar.progress = 1.0;
@@ -233,40 +235,15 @@
  
 }
 //need a new method didFinish
-/*
--(void) didFinish
+
+-(void) viewDidDisappear:(BOOL)animated
 {
-  //1. Turn off timer for progressView
-  //2. clean up session
-  
-  self.currentRecording = nil;
-  
-  NSMutableArray* startingArray;
-  if(startingArray == nil){
-    startingArray = [[NSMutableArray alloc] init];
-  }
-  [startingArray addObject: @"cat"];
-  [startingArray addObject: @"dog"];
-  [startingArray addObject: @"sheep"];
-  [startingArray addObject: @"snake"];
-  [startingArray addObject: @"pig"];
-  [startingArray addObject: @"llama"];
-  [startingArray addObject: @"horse"];
-  [startingArray addObject: @"tiger"];
-  
-  NSLog(@"%@", startingArray);
-  for(NSString* s in startingArray){
-   NSLog(@"%@", s);
-   }
-  
-  NSString* archive = [NSString stringWithFormat:@"%@/Documents/arrayArchive", NSHomeDirectory()];
-  [NSKeyedArchiver archiveRootObject: startingArray toFile: archive];
-  
-  assert([[NSFileManager defaultManager] fileExistsAtPath: archive]);
-  
-  archive = [NSString stringWithFormat:@"%@/Documents/arrayArchive", NSHomeDirectory()];
-  
-  
+  NSLog(@"View disappeared");
+  NSString* archive = [NSString stringWithFormat:@"%@/Documents/recordingsArchive", NSHomeDirectory()];
+  [NSKeyedArchiver archiveRootObject:self.listOfRecordings toFile:archive];
+  NSLog(@"Archived code executed");
+}
+  /*
   NSMutableArray *secondArray;
   if([[NSFileManager defaultManager] fileExistsAtPath: archive]){
     secondArray = [NSKeyedUnarchiver unarchiveObjectWithFile:archive];
@@ -313,7 +290,7 @@
   }
   NSLog(@"%@", tenPeople);
   
-  archive = [NSString stringWithFormat:@"%@/Documents/tenPeopleArchive", NSHomeDirectory()];
+  archive = [NSString stringWithFormat:@"%@/Documents/recordingsArchive", NSHomeDirectory()];
   
   [NSKeyedArchiver archiveRootObject: self.listOfRecordings toFile: archive];
   
@@ -332,15 +309,8 @@
   NSLog(@"%@", theOtherTenPeople);
   
 }
-return 0;
-}
 
 
-
-  //3. set currentRecording to nil
-  //4. Reset progressView
-
-}
 */
 @end
 
